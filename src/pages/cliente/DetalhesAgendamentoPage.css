@@ -1,0 +1,151 @@
+/* src/pages/cliente/DetalhesAgendamentoPage.css */
+.detalhes-agendamento-container-ofix {
+  padding: 20px 15px; /* Padding para mobile */
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--texto-primario); /* Assumindo que está dentro do ClienteLayout (fundo escuro) */
+}
+
+.loading-state {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 50px;
+    color: var(--texto-primario);
+}
+
+.back-button-ofix {
+  background: none;
+  border: none;
+  color: var(--ofix-azul);
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  padding: 5px 0;
+}
+.back-button-ofix:hover {
+  text-decoration: underline;
+}
+
+.page-title-detalhes {
+  font-size: 1.8em; /* Menor para mobile */
+  color: var(--ofix-branco);
+  margin-bottom: 5px;
+}
+
+.oficina-endereco-detalhes {
+  font-size: 0.9em;
+  color: var(--ofix-cinza-claro);
+  margin-bottom: 25px;
+}
+
+.agendamento-form-ofix .form-section-ofix {
+  background-color: var(--fundo-secao-destaque); /* var(--ofix-cinza-escuro) */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.agendamento-form-ofix .form-section-ofix h2 {
+  font-size: 1.2em;
+  color: var(--ofix-branco);
+  margin-top: 0;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--ofix-cinza-medio);
+  padding-bottom: 10px;
+}
+
+.agendamento-form-ofix select,
+.agendamento-form-ofix textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--borda-padrao);
+  background-color: var(--ofix-cinza-claro);
+  color: var(--texto-no-card);
+  font-size: 1rem;
+}
+.agendamento-form-ofix textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.mecanicos-grid-ofix {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.mecanico-card-ofix {
+  background-color: var(--ofix-cinza-claro);
+  color: var(--texto-no-card);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.mecanico-card-ofix:hover {
+  border-color: var(--ofix-azul);
+  transform: translateY(-3px);
+}
+.mecanico-card-ofix.selected {
+  border-color: var(--ofix-vermelho);
+  background-color: #e0e0e0; /* Um pouco mais escuro */
+  box-shadow: 0 0 5px var(--ofix-vermelho);
+}
+.mecanico-card-ofix img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  object-fit: cover;
+  background-color: #ccc;
+}
+.mecanico-card-ofix strong {
+  display: block;
+  font-size: 0.9em;
+  margin-bottom: 4px;
+}
+.mecanico-card-ofix span {
+  font-size: 0.75em;
+  color: #555;
+}
+
+.confirmar-agendamento-button-ofix {
+  background-color: var(--ofix-vermelho);
+  color: var(--ofix-branco);
+  border: none;
+  padding: 15px;
+  width: 100%;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.confirmar-agendamento-button-ofix:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .detalhes-agendamento-container-ofix {
+    padding: 30px;
+  }
+  .page-title-detalhes {
+    font-size: 2.2em;
+  }
+  .agendamento-form-ofix .form-section-ofix {
+    padding: 20px;
+  }
+  .agendamento-form-ofix .form-section-ofix h2 {
+    font-size: 1.5em;
+  }
+}

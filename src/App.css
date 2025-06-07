@@ -1,0 +1,19 @@
+/* src/App.css */
+/* Este arquivo pode ser usado para estilos globais que se aplicam
+   a todo o aplicativo, se não estiverem já no index.css.
+   Por exemplo, estilos para um container principal do App se você
+   não usar um Fragment <></> no App.tsx.
+
+   No nosso caso atual, com os Layouts gerenciando a maior parte da estrutura visual
+   de cada seção, o App.css pode não ser muito necessário.
+   O index.css já define o fundo do body e a fonte padrão.
+*/
+
+/* Exemplo: se você envolver <Routes> com <div className="app-container"> no App.tsx */
+/*
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+*/

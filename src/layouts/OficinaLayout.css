@@ -1,0 +1,142 @@
+/* src/layouts/OficinaLayout.css */
+.oficina-layout-ofix {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--ofix-cinza-claro);
+  color: var(--texto-no-card);
+}
+
+.oficina-header-ofix {
+  background-color: var(--ofix-cinza-escuro);
+  color: var(--ofix-branco);
+  padding: 10px 15px; /* Menor padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.oficina-header-ofix .logo-ofix {
+  font-size: 1.4em; /* Menor */
+  font-weight: bold;
+  color: var(--ofix-vermelho);
+  text-decoration: none;
+}
+.oficina-header-ofix .logo-subtitle-ofix {
+  font-size: 0.6em; /* Menor */
+  color: var(--ofix-cinza-claro);
+  margin-left: 4px;
+}
+
+/* Navegação Mobile - similar ao cliente, idealmente um menu hambúrguer */
+.oficina-nav-ofix {
+  display: flex;
+  align-items: center;
+}
+
+.oficina-nav-ofix .nav-link {
+  color: var(--ofix-cinza-claro);
+  margin-left: 8px; /* Menor */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 4px;
+  font-size: 0.8em; /* Menor */
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+/* Esconder o texto e mostrar só ícone em telas muito pequenas, se usar ícones */
+/* @media (max-width: 480px) {
+  .oficina-nav-ofix .nav-link span { display: none; }
+  .oficina-nav-ofix .nav-link { margin-left: 5px; padding: 8px; }
+} */
+
+.oficina-nav-ofix .switch-role-ofix {
+  background-color: var(--ofix-azul);
+  color: var(--ofix-branco);
+  padding: 6px 10px; /* Menor */
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+
+@media (min-width: 768px) {
+  .oficina-header-ofix {
+    padding: 12px 30px;
+  }
+  .oficina-header-ofix .logo-ofix {
+    font-size: 1.7em;
+  }
+  .oficina-header-ofix .logo-subtitle-ofix {
+    font-size: 0.65em;
+  }
+  .oficina-nav-ofix .nav-link {
+    margin-left: 20px;
+    font-size: 0.95em;
+    padding: 8px 0;
+    gap: 6px;
+  }
+  .oficina-nav-ofix .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--ofix-vermelho);
+  }
+  .oficina-nav-ofix .switch-role-ofix {
+    padding: 8px 15px;
+    font-size: 0.95em;
+    margin-left: 25px;
+  }
+}
+
+.oficina-content-area-ofix {
+  flex-grow: 1;
+  padding: 15px; /* Padding base para mobile */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .oficina-content-area-ofix {
+    padding: 25px 30px;
+  }
+}
+
+.oficina-footer-ofix {
+  text-align: center;
+  padding: 15px;
+  background-color: #e9ecef;
+  color: var(--ofix-cinza-medio);
+  font-size: 0.85em;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Adicionar dentro de ClienteLayout.css e OficinaLayout.css */
+.logo-link-ofix { /* Para o link que envolve a logo */
+  display: flex; /* Para alinhar imagem e texto (se houver) */
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-image-ofix {
+  height: 35px; /* Ajuste conforme o tamanho da sua logo e design do header */
+  width: auto; /* Mantém a proporção */
+  margin-right: 8px; /* Espaço se tiver texto ao lado, como "Painel" no OficinaLayout */
+}
+
+/* Ajuste para o .oficina-header-ofix .logo-subtitle-ofix se necessário */
+.oficina-header-ofix .logo-subtitle-ofix {
+  font-size: 0.7em;
+  color: var(--ofix-cinza-claro);
+  font-weight: normal;
+  /* margin-left: 5px; Não precisa mais se a imagem tiver margin-right */
+  vertical-align: middle;
+}

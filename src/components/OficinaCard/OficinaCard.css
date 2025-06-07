@@ -1,0 +1,193 @@
+/* src/components/OficinaCard.css */
+.oficina-card-ofix {
+  background-color: var(--fundo-card);
+  color: var(--texto-no-card);
+  border-radius: 12px;
+  overflow: hidden; /* Para o raio da borda afetar a imagem */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.oficina-card-ofix:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-image-container-ofix {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Altura fixa para a imagem */
+}
+
+.oficina-imagem-ofix {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+.avaliacao-badge-ofix {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0,0,0,0.7);
+  color: var(--ofix-branco);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.avaliacao-badge-ofix .star-icon {
+  margin-right: 4px;
+  color: #FFD700; /* Cor de estrela */
+}
+
+.card-content-ofix {
+  padding: 15px;
+  flex-grow: 1; /* Faz o conteúdo crescer para empurrar as ações para baixo */
+}
+
+.card-content-ofix h3 {
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+  color: var(--ofix-preto);
+}
+
+.card-content-ofix p, .card-content-ofix div {
+  font-size: 0.9em;
+  color: var(--ofix-cinza-medio);
+  margin-bottom: 0.6em;
+  display: flex;
+  align-items: center;
+}
+.card-content-ofix .content-icon {
+    margin-right: 6px;
+    color: var(--ofix-azul);
+    font-size: 1em;
+}
+
+.servicos-tags-ofix {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+  align-items: center; /* Para alinhar o ícone com as tags */
+}
+
+.servico-tag-ofix {
+  background-color: var(--ofix-cinza-claro);
+  color: var(--ofix-cinza-medio);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  border: 1px solid #ddd;
+}
+
+.card-actions-ofix {
+  display: flex;
+  justify-content: space-between; /* Ou space-around, ou flex-end */
+  padding: 10px 15px;
+  border-top: 1px solid var(--ofix-cinza-claro);
+  gap: 10px; /* Espaço entre os botões */
+}
+
+.action-button-ofix {
+  flex-grow: 1; /* Faz os botões ocuparem espaço igual se houver mais de um */
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+}
+
+.primary-action-ofix {
+  background-color: var(--botao-primario-bg);
+  color: var(--botao-primario-texto);
+}
+.primary-action-ofix:hover {
+  opacity: 0.85;
+}
+
+.secondary-action-ofix {
+  background-color: var(--botao-secundario-bg);
+  color: var(--botao-secundario-texto);
+}
+.secondary-action-ofix:hover {
+  opacity: 0.85;
+}
+
+/* src/components/OficinaCard/OficinaCard.css */
+/* ... (estilos anteriores) ... */
+
+.oficina-card-ofix {
+  /* ... */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Sombra um pouco mais sutil para mobile */
+}
+
+.card-image-container-ofix {
+  height: 180px; /* Altura pode ser um pouco menor em mobile */
+}
+
+.card-content-ofix h3 {
+  font-size: 1.15em; /* Um pouco menor */
+}
+
+.card-content-ofix p, .card-content-ofix div {
+  font-size: 0.85em; /* Um pouco menor */
+  margin-bottom: 0.5em;
+}
+
+.servico-tag-ofix {
+  padding: 2px 6px; /* Tags menores */
+  font-size: 0.7em;
+}
+
+.card-actions-ofix {
+  padding: 12px; /* Menor padding */
+  flex-direction: column; /* Botões empilhados em mobile */
+  gap: 8px;
+}
+
+.action-button-ofix {
+  width: 100%; /* Botões ocupam largura total */
+  padding: 12px; /* Bom padding para toque */
+}
+
+@media (min-width: 400px) { /* Se houver espaço, botões lado a lado */
+    .card-actions-ofix {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .action-button-ofix {
+        width: auto;
+        flex-grow: 1; /* Para ocupar espaço igual se houver 2 */
+    }
+    .action-button-ofix + .action-button-ofix { /* Adiciona margem só se tiver mais de um */
+        margin-left: 8px;
+    }
+}
+
+@media (min-width: 768px) {
+  .card-image-container-ofix {
+    height: 200px;
+  }
+  .card-content-ofix h3 {
+    font-size: 1.3em;
+  }
+  .card-content-ofix p, .card-content-ofix div {
+    font-size: 0.9em;
+  }
+  /* Volta para botões lado a lado se não estiver já */
+   .card-actions-ofix {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+     .action-button-ofix {
+        width: auto;
+        flex-grow: 1;
+    }
+}

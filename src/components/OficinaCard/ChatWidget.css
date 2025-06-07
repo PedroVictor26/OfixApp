@@ -1,0 +1,220 @@
+/* src/components/ChatWidget/ChatWidget.css */
+.chat-widget-container-ofix {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001; /* Acima da maioria dos outros elementos */
+}
+
+.fab-ofix {
+  background-image: linear-gradient(45deg, var(--ofix-vermelho), #FF3D3D); /* Gradiente sutil */
+  color: var(--ofix-branco);
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3); /* Sombra mais pronunciada */
+  cursor: pointer;
+  font-size: 1.6em; /* Aumentar um pouco o tamanho do ícone padrão */
+  transition: transform 0.2s ease-in-out, background-image 0.3s ease, box-shadow 0.2s ease;
+  outline: none; /* Remove outline padrão do botão */
+}
+
+.fab-ofix:hover {
+  background-image: linear-gradient(45deg, #FF3D3D, var(--ofix-vermelho)); /* Inverte gradiente no hover */
+  transform: scale(1.1) rotate(5deg); /* Animação mais interessante */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.fab-ofix:active {
+  transform: scale(1.05) rotate(0deg); /* Efeito ao clicar */
+}
+
+.fab-ofix .fab-icon-container { /* Para o ícone principal */
+  font-size: 1em; /* O ícone em si terá este tamanho relativo ao font-size do .fab-ofix */
+  line-height: 1;
+}
+
+.fab-ofix .fab-text { /* Para o texto "Chat" ou "IA" */
+  font-size: 0.45em; /* Texto menor e proporcional */
+  margin-top: 3px;
+  font-weight: 600; /* Um pouco mais de peso */
+  line-height: 1;
+}
+
+.chat-window-ofix {
+  width: 350px;
+  height: 500px;
+  background-color: var(--ofix-branco);
+  color: var(--texto-no-card);
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Para o border-radius funcionar no header/footer */
+  border: 1px solid var(--borda-padrao);
+}
+
+.chat-header-ofix {
+  background-color: var(--ofix-azul);
+  color: var(--ofix-branco);
+  padding: 12px 15px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+.close-chat-button-ofix {
+  background: none;
+  border: none;
+  color: var(--ofix-branco);
+  font-size: 0.9em; /* Menor que o título */
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.close-chat-button-ofix:hover {
+    opacity: 0.8;
+}
+
+.chat-messages-ofix {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto; /* Habilita scroll */
+  background-color: #f9f9f9; /* Fundo sutil para as mensagens */
+}
+
+.message-bubble-ofix {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.message-bubble-ofix p {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+.timestamp-ofix {
+    display: block;
+    font-size: 0.7em;
+    color: #777;
+    margin-top: 4px;
+    text-align: right;
+}
+
+.message-bubble-ofix.user {
+  background-color: var(--ofix-azul);
+  color: var(--ofix-branco);
+  margin-left: auto; /* Alinha à direita */
+  border-bottom-right-radius: 5px; /* Estilo de balão */
+}
+.message-bubble-ofix.user .timestamp-ofix {
+    color: #e0e0e0;
+}
+
+.message-bubble-ofix.ia {
+  background-color: var(--ofix-cinza-claro);
+  color: var(--texto-no-card);
+  margin-right: auto; /* Alinha à esquerda */
+  border-bottom-left-radius: 5px; /* Estilo de balão */
+  border: 1px solid #e0e0e0;
+}
+
+.chat-input-form-ofix {
+  display: flex;
+  align-items: center; /* Alinha verticalmente os itens */
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+  background-color: var(--ofix-branco);
+}
+
+.chat-input-form-ofix input {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin-right: 8px;
+  font-size: 0.9em;
+  outline: none; /* Remove outline ao focar */
+}
+.chat-input-form-ofix input:focus {
+  border-color: var(--ofix-azul); /* Destaque ao focar */
+}
+
+/* Estilo para o botão de Áudio */
+.audio-button-ofix {
+  background: none;
+  border: none;
+  color: var(--ofix-cinza-medio);
+  font-size: 1.3em;
+  padding: 8px; /* Padding para área de clique */
+  margin-right: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Para um visual circular */
+  width: 40px; /* Dimensões iguais ao botão de enviar */
+  height: 40px;
+  transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave */
+}
+.audio-button-ofix:hover {
+  background-color: var(--ofix-cinza-claro); /* Feedback no hover */
+  color: var(--ofix-azul);
+}
+.audio-button-ofix.recording { /* Estilo quando estiver gravando */
+  color: var(--ofix-vermelho); /* Cor vermelha para indicar gravação */
+  background-color: #ffe0e0; /* Um fundo vermelho bem claro */
+}
+
+/* Estilo específico para o botão de Enviar Mensagem */
+.send-button-ofix {
+  background-color: var(--ofix-vermelho);
+  color: var(--ofix-branco);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em; /* Ajuste conforme o ícone FaPaperPlane */
+  flex-shrink: 0; /* Para não encolher se o input for muito grande */
+}
+.send-button-ofix:hover {
+  background-color: #b30000; /* Vermelho mais escuro */
+}
+
+
+/* Responsividade para o chat window em telas menores */
+@media (max-width: 480px) {
+  .chat-widget-container-ofix.open {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .chat-window-ofix {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+  }
+  .fab-ofix {
+    bottom: 15px;
+    right: 15px;
+    width: 55px;
+    height: 55px;
+  }
+}

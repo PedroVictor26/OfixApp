@@ -1,0 +1,161 @@
+/* src/layouts/ClienteLayout.css */
+.cliente-layout-ofix {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--fundo-principal);
+  color: var(--texto-primario);
+}
+
+.cliente-header-ofix {
+  background-color: var(--ofix-cinza-escuro);
+  padding: 10px 15px; /* Menor padding para mobile */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.cliente-header-ofix .logo-ofix {
+  font-size: 1.6em; /* Um pouco menor para mobile */
+  font-weight: bold;
+  color: var(--ofix-vermelho);
+  text-decoration: none;
+}
+
+/* Navegação Mobile (ex: menu hambúrguer ou simplificada) */
+.cliente-nav-ofix {
+  display: flex;
+  align-items: center;
+}
+
+/* Por padrão, escondemos os links de navegação no header para mobile,
+   você implementaria um botão de menu hambúrguer aqui.
+   Por simplicidade, vamos mantê-los mas eles podem quebrar a linha.
+   Uma abordagem melhor seria um menu dropdown. */
+.cliente-nav-ofix .nav-link {
+  color: var(--ofix-cinza-claro);
+  margin-left: 10px; /* Menor espaçamento */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 5px; /* Menor padding */
+  font-size: 0.9em; /* Fonte menor para caber */
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+/* Botão "Sou Oficina" menor em mobile */
+.cliente-nav-ofix .switch-role-ofix {
+  background-color: var(--ofix-azul);
+  color: var(--ofix-branco);
+  padding: 6px 10px; /* Menor */
+  border-radius: 5px;
+  font-size: 0.85em;
+}
+
+/* Estilos para telas maiores (desktop) */
+@media (min-width: 768px) {
+  .cliente-header-ofix {
+    padding: 12px 30px;
+  }
+  .cliente-header-ofix .logo-ofix {
+    font-size: 1.8em;
+  }
+  .cliente-nav-ofix .nav-link {
+    margin-left: 25px;
+    font-size: 1em;
+    padding: 8px 0;
+    gap: 6px;
+  }
+  .cliente-nav-ofix .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--ofix-vermelho);
+  }
+  .cliente-nav-ofix .switch-role-ofix {
+    padding: 8px 15px;
+    font-size: 1em;
+    margin-left: 30px;
+  }
+}
+
+.cliente-content-area-ofix {
+  flex-grow: 1;
+  /* Padding será definido nas páginas filhas ou aqui se global */
+  /* padding: 15px; */
+}
+
+.cliente-footer-ofix {
+  text-align: center;
+  padding: 15px; /* Menor padding */
+  background-color: var(--ofix-cinza-escuro);
+  color: var(--ofix-cinza-claro);
+  font-size: 0.85em;
+  border-top: 1px solid var(--ofix-preto);
+}
+
+/* src/layouts/ClienteLayout.css */
+
+/* ... outros estilos ... */
+
+.logo-link-ofix {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* CORREÇÃO APLICADA AQUI: */
+.cliente-header-ofix .logo-image-ofix { /* Espaço entre as classes indica descendência */
+  height: 45px; /* Ajuste este valor conforme necessário. Comece com um valor visível. */
+  width: auto;   /* Mantém a proporção */
+  margin-right: 8px; /* Espaço se tiver texto ao lado */
+  display: block; /* Garante que a imagem tenha dimensões de bloco */
+}
+
+/* Se você ainda tem o estilo .cliente-header-ofix .logo-ofix para o texto da logo,
+   ele não se aplicará mais à imagem. O seletor acima é específico para a imagem.
+   Você pode remover o .cliente-header-ofix .logo-ofix se ele não estiver sendo usado para mais nada,
+   ou mantê-lo se você alternar entre texto e imagem para a logo.
+*/
+/* REMOVA OU COMENTE ESTE SE VOCÊ ESTÁ USANDO A IMAGEM:
+.cliente-header-ofix .logo-ofix {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: var(--ofix-vermelho);
+  text-decoration: none;
+}
+*/
+
+/* Se você quer que o .logo-ofix (que era para texto) se aplique ao link que contém a imagem: */
+.cliente-header-ofix .logo-link-ofix { /* Estilizando o Link que contém a imagem */
+  /* Você pode adicionar estilos aqui se o link em si precisar de estilização,
+     mas o tamanho da imagem é controlado pela classe da imagem. */
+  text-decoration: none; /* Garante que o link não tenha sublinhado */
+}
+
+
+/* Mantenha os estilos responsivos para a logo se desejar */
+@media (min-width: 768px) {
+  .cliente-header-ofix .logo-image-ofix {
+    height: 50px; /* Tamanho maior para desktop */
+    /* Outros ajustes se necessário */
+  }
+  /* ... outros estilos @media ... */
+}
+
+/* Ajuste para o .oficina-header-ofix .logo-subtitle-ofix se necessário */
+.oficina-header-ofix .logo-subtitle-ofix {
+  font-size: 0.7em;
+  color: var(--ofix-cinza-claro);
+  font-weight: normal;
+  /* margin-left: 5px; Não precisa mais se a imagem tiver margin-right */
+  vertical-align: middle;
+}

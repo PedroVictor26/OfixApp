@@ -1,0 +1,111 @@
+/* src/index.css */
+:root {
+  /* Cores Primárias OFIX */
+  --ofix-preto: #121212; /* Um preto um pouco mais suave que #000000 para conforto visual */
+  --ofix-vermelho: #E00000;
+  --ofix-azul: #007BFF;
+
+  /* Cores Secundárias/Neutras OFIX */
+  --ofix-branco: #FFFFFF;
+  --ofix-cinza-claro: #F0F0F0; /* Para fundos de seções claras, como inputs e cards */
+  --ofix-cinza-medio: #333333; /* Texto secundário em fundo escuro, bordas em fundo claro */
+  --ofix-cinza-escuro: #222222; /* Para fundos de cards/seções escuras alternativas */
+  --ofix-texto-sobre-preto: #EAEAEA; /* Branco levemente acinzentado para melhor leitura */
+  --ofix-texto-sobre-claro: #333333;
+
+  /* Aplicação da Paleta */
+  --fundo-principal: var(--ofix-preto);
+  --fundo-secao-destaque: var(--ofix-cinza-escuro); /* Para a seção de busca */
+  --fundo-card: var(--ofix-branco); /* Cards de oficina */
+  
+  --texto-primario: var(--ofix-texto-sobre-preto);
+  --texto-secundario: #A0A0A0; /* Um cinza mais claro para detalhes menos importantes */
+  --texto-no-card: var(--ofix-texto-sobre-claro);
+
+  --borda-padrao: var(--ofix-cinza-medio);
+
+  --botao-primario-bg: var(--ofix-vermelho);
+  --botao-primario-texto: var(--ofix-branco);
+  --botao-secundario-bg: var(--ofix-azul);
+  --botao-secundario-texto: var(--ofix-branco);
+}
+/* src/index.css */
+/* ... (variáveis CSS permanecem as mesmas) ... */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--fundo-principal);
+  color: var(--texto-primario);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px; /* Tamanho base para mobile */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.75em;
+  font-weight: 600;
+  line-height: 1.3; /* Ligeiramente mais apertado para mobile */
+}
+
+h1 { font-size: 1.8em; } /* Ajuste para mobile */
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.2em; }
+
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--ofix-azul);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  padding: 12px 18px; /* Botões com bom padding para toque */
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  padding: 12px 15px; /* Padding bom para toque */
+  border: 1px solid var(--borda-padrao);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--ofix-cinza-claro);
+  color: var(--texto-no-card);
+  width: 100%; /* Inputs ocupam largura total por padrão */
+}
+
+input::placeholder {
+    color: #777;
+}
+
+/* Classe utilitária para esconder em mobile */
+.hide-on-mobile {
+    display: none;
+}
+
+/* Mostrar apenas em telas maiores */
+@media (min-width: 768px) {
+    .hide-on-mobile {
+        display: revert; /* Ou o display original que tinha */
+    }
+    /* Você pode querer aumentar a fonte base para desktop aqui */
+    /* body { font-size: 17px; } */
+}

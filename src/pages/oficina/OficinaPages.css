@@ -1,0 +1,232 @@
+
+
+.page-title-oficina {
+  font-size: 2em;
+  color: var(--texto-no-card); /* Texto escuro, pois o fundo é claro */
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--ofix-vermelho); /* Destaque vermelho */
+}
+
+/* Estilos para cards/seções dentro das páginas da oficina */
+.oficina-section-card {
+  background-color: var(--ofix-branco);
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  margin-bottom: 25px;
+}
+
+.oficina-section-card h2 {
+  font-size: 1.4em;
+  color: var(--ofix-azul); /* Títulos das seções em azul */
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* Estilos para botões dentro das páginas da oficina */
+.oficina-button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-right: 10px; /* Espaço entre botões */
+}
+.oficina-button:last-child {
+  margin-right: 0;
+}
+.oficina-button:hover {
+  opacity: 0.85;
+}
+.oficina-button:active {
+  transform: translateY(1px);
+}
+
+
+.oficina-button.primary {
+  background-color: var(--ofix-vermelho);
+  color: var(--ofix-branco);
+}
+
+.oficina-button.secondary {
+  background-color: var(--ofix-azul);
+  color: var(--ofix-branco);
+}
+
+.oficina-button.neutral {
+  background-color: var(--ofix-cinza-claro);
+  color: var(--ofix-cinza-medio);
+  border: 1px solid #ccc;
+}
+
+/* Estilos para listas e itens (ex: agendamentos, serviços) */
+.items-list-oficina {
+  list-style: none;
+  padding: 0;
+}
+
+.item-card-oficina {
+  background-color: #f8f9fa; /* Um pouco diferente do fundo principal da seção */
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-card-oficina:last-child {
+  margin-bottom: 0;
+}
+
+.item-card-oficina h3 {
+  font-size: 1.1em;
+  margin: 0 0 5px 0;
+  color: var(--texto-no-card);
+}
+.item-card-oficina p {
+  font-size: 0.9em;
+  color: #6c757d; /* Cinza mais suave para detalhes */
+  margin-bottom: 3px;
+}
+.item-actions-oficina button {
+  margin-left: 8px;
+  font-size: 0.85em;
+  padding: 6px 12px;
+}
+
+
+/* Estilos para formulários */
+.form-oficina .form-group {
+  margin-bottom: 20px;
+}
+.form-oficina label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--texto-no-card);
+}
+.form-oficina input[type="text"],
+.form-oficina input[type="number"],
+.form-oficina input[type="datetime-local"],
+.form-oficina select,
+.form-oficina textarea {
+  width: 100%;
+  background-color: var(--ofix-branco); /* Inputs brancos para contraste */
+  border: 1px solid #ced4da;
+}
+.form-oficina textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Dashboard específico */
+.dashboard-grid-oficina {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.dashboard-card-ofix { /* Pode ser a mesma .oficina-section-card */
+  background-color: var(--ofix-branco);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  text-align: center;
+}
+.dashboard-card-ofix h2 {
+  font-size: 1.2em;
+  margin-top: 0;
+  color: var(--ofix-azul);
+  margin-bottom: 10px;
+}
+.metric-ofix {
+  font-size: 2.8em;
+  font-weight: bold;
+  color: var(--ofix-vermelho);
+  margin: 10px 0 15px 0;
+  display: block;
+}
+.dashboard-card-ofix a {
+    font-size: 0.9em;
+    color: var(--ofix-azul);
+    text-decoration: underline;
+}
+
+.recent-activity-ofix { /* Pode ser a mesma .oficina-section-card */
+  background-color: var(--ofix-branco);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+}
+.recent-activity-ofix h2 {
+  font-size: 1.4em;
+  color: var(--ofix-azul);
+  margin-top: 0;
+}
+
+/* src/pages/oficina/OficinaPages.css */
+/* ... (estilos anteriores) ... */
+
+.page-title-oficina {
+  font-size: 1.6em; /* Menor para mobile */
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.oficina-section-card {
+  padding: 15px; /* Menor padding */
+  margin-bottom: 20px;
+}
+
+.oficina-section-card h2 {
+  font-size: 1.2em; /* Menor */
+}
+
+/* Listas e Itens */
+.item-card-oficina {
+  padding: 12px;
+  margin-bottom: 10px;
+  flex-direction: column; /* Empilhar em mobile */
+  align-items: flex-start;
+}
+.item-card-oficina div:first-child {
+    margin-bottom: 10px; /* Espaço entre o conteúdo e as ações */
+    width: 100%;
+}
+.item-actions-oficina {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Alinha botões à direita */
+}
+.item-actions-oficina button {
+  font-size: 0.8em; /* Botões menores */
+  padding: 5px 10px;
+}
+
+/* Dashboard */
+.dashboard-grid-oficina {
+  grid-template-columns: 1fr; /* Uma coluna em mobile */
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.dashboard-card-ofix {
+  padding: 15px;
+}
+.metric-ofix {
+  font-size: 2.2em; /* Menor */
+}
+
+@media (min-width: 768px) {
+  .page-title-oficina { font-size: 2em; }
+  .oficina-section-card { padding: 20px 25px; }
+  .oficina-section-card h2 { font-size: 1.4em; }
+  .item-card-oficina { flex-direction: row; align-items: center; }
+  .item-card-oficina div:first-child { margin-bottom: 0; }
+  .dashboard-grid-oficina { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .metric-ofix { font-size: 2.8em; }
+}

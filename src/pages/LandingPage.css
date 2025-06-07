@@ -1,0 +1,113 @@
+/* src/pages/LandingPage.css */
+.landing-container-ofix {
+  display: flex;
+  flex-direction: column; /* Adicionado para melhor centralização com footer */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--ofix-preto);
+  color: var(--ofix-texto-sobre-preto);
+  padding: 20px;
+  text-align: center;
+  /* background-image: linear-gradient(to bottom right, var(--ofix-preto), var(--ofix-cinza-escuro)); */
+}
+
+.landing-content-ofix {
+  max-width: 650px; /* Aumentar um pouco */
+  width: 100%;
+  padding: 40px 20px;
+  background-color: rgba(34, 34, 34, 0.5); /* var(--ofix-cinza-escuro com um pouco de transparência) */
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.landing-logo-ofix {
+  font-size: 4.5em; /* Maior */
+  font-weight: bold;
+  color: var(--ofix-vermelho);
+  margin-bottom: 25px;
+  /* text-shadow: 0px 0px 15px rgba(224, 0, 0, 0.6); */
+}
+
+.landing-title-ofix {
+  font-size: 2.8em; /* Ajustado */
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: var(--ofix-branco);
+}
+
+.landing-subtitle-ofix {
+  font-size: 1.15em; /* Ajustado */
+  color: var(--ofix-cinza-claro);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.landing-actions-ofix {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Aumentar o espaço */
+  flex-wrap: wrap;
+}
+
+.landing-button-ofix {
+  padding: 16px 35px; /* Botões maiores */
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  min-width: 200px;
+  border: 2px solid transparent; /* Para efeito de borda no hover */
+}
+
+.landing-button-ofix:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.cliente-button-ofix {
+  background-color: var(--ofix-azul);
+  color: var(--ofix-branco);
+}
+.cliente-button-ofix:hover {
+  background-color: #0056b3; /* Azul mais escuro */
+  border-color: var(--ofix-branco);
+}
+
+
+.oficina-button-ofix {
+  background-color: var(--ofix-vermelho);
+  color: var(--ofix-branco);
+}
+.oficina-button-ofix:hover {
+  background-color: #b30000; /* Vermelho mais escuro */
+  border-color: var(--ofix-branco);
+}
+
+/* Adicionar/Substituir em LandingPage.css */
+.landing-logo-image-ofix { /* Estilo para a logo na landing page */
+  height: 250px; /* Tamanho maior para a landing page */
+  width: auto;
+  margin-bottom: 15px;
+}
+
+/* Remova ou comente o estilo .landing-logo-ofix se você substituiu o texto pela imagem */
+
+/* .landing-logo-image-ofix {
+  font-size: 4.5em;
+  font-weight: bold;
+  color: var(--ofix-vermelho);
+  margin-bottom: 25px;
+} */
+
+
+/* Footer para a Landing Page 
+.landing-footer-ofix {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--ofix-cinza-medio);
+}

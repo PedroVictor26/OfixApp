@@ -1,0 +1,238 @@
+/* src/pages/HomePage.css */
+.homepage-container-ofix {
+  max-width: 100%; /* Ocupa toda a largura */
+  margin: 0 auto;
+}
+
+.app-header-ofix {
+  background-color: var(--ofix-cinza-escuro); /* Um pouco mais claro que o fundo */
+  color: var(--ofix-branco);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo-ofix {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--ofix-vermelho); /* Logo em vermelho */
+}
+
+.main-nav-ofix a, .login-button-ofix {
+  color: var(--ofix-branco);
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.login-button-ofix {
+    background-color: var(--ofix-azul);
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.hero-section-ofix {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--ofix-preto); /* Pode ter uma imagem de fundo aqui */
+  /* Exemplo com gradiente sutil se não tiver imagem:
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('sua-imagem-de-fundo.jpg');
+  background-size: cover;
+  background-position: center;
+  */
+}
+
+.hero-section-ofix h1 {
+  font-size: 2.8em;
+  color: var(--ofix-branco);
+  margin-bottom: 0.3em;
+}
+
+.hero-section-ofix p {
+  font-size: 1.2em;
+  color: var(--ofix-cinza-claro);
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+.search-section-ofix {
+  background-color: var(--fundo-secao-destaque);
+  padding: 30px 20px;
+  margin: 0 auto; /* Centraliza a seção de busca */
+  max-width: 900px; /* Limita a largura da seção de busca */
+  border-radius: 0 0 12px 12px; /* Arredonda cantos inferiores se abaixo do hero */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: relative; /* Para posicionar em cima de um hero se quiser */
+  /* margin-top: -50px; Exemplo para sobrepor um pouco o hero */
+}
+
+.search-controls-ofix {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap; /* Permite quebrar em telas menores */
+}
+
+.search-controls-ofix .form-group-ofix {
+  flex-grow: 1; /* Campos ocupam espaço disponível */
+  min-width: 180px; /* Largura mínima antes de quebrar */
+}
+
+.search-controls-ofix .form-group-ofix .input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+.search-controls-ofix .form-group-ofix input,
+.search-controls-ofix .form-group-ofix select {
+  width: 100%;
+}
+
+.search-button-ofix {
+  background-color: var(--botao-primario-bg);
+  color: var(--botao-primario-texto);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  flex-shrink: 0; /* Não encolhe */
+}
+.search-button-ofix:hover { opacity: 0.85; }
+
+.results-section-ofix {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.results-section-ofix h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: var(--ofix-branco);
+}
+
+.oficinas-grid-ofix {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.no-results-ofix {
+  text-align: center;
+  font-size: 1.1em;
+  color: var(--ofix-cinza-claro);
+  padding: 40px 0;
+}
+
+.app-footer-ofix {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: var(--ofix-cinza-escuro);
+  color: var(--ofix-cinza-claro);
+  font-size: 0.9em;
+}
+
+/* Media queries para responsividade (exemplo) */
+@media (max-width: 768px) {
+  .hero-section-ofix h1 {
+    font-size: 2.2em;
+  }
+  .search-controls-ofix {
+    flex-direction: column;
+    align-items: stretch; /* Estica os itens para preencher */
+  }
+  .search-controls-ofix .form-group-ofix {
+    width: 100%;
+  }
+  .oficinas-grid-ofix {
+    grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+  }
+}
+
+/* src/pages/cliente/HomePage.css */
+/* ... (estilos anteriores) ... */
+
+.hero-section-ofix {
+  padding: 40px 15px; /* Menor padding vertical */
+  text-align: center;
+}
+
+.hero-section-ofix h1 {
+  font-size: 2em; /* Menor para mobile */
+}
+
+.hero-section-ofix p {
+  font-size: 1em; /* Menor para mobile */
+  margin-bottom: 25px;
+}
+
+.search-section-ofix {
+  padding: 20px 15px; /* Menor padding */
+  margin: 0 10px 20px 10px; /* Margens laterais para não colar na borda */
+  border-radius: 8px;
+  /* margin-top: -30px; Ajuste se sobrepuser o hero */
+}
+
+.search-controls-ofix {
+  display: flex;
+  flex-direction: column; /* Empilhar verticalmente em mobile */
+  gap: 15px;
+}
+
+.search-controls-ofix .form-group-ofix {
+  width: 100%; /* Ocupar largura total */
+}
+
+.search-button-ofix {
+  width: 100%; /* Botão de busca ocupa largura total */
+  padding: 14px; /* Bom tamanho para toque */
+}
+
+.results-section-ofix-cliente {
+  padding: 20px 10px; /* Menor padding */
+}
+
+.results-section-ofix-cliente h2 {
+  font-size: 1.6em; /* Menor */
+  margin-bottom: 20px;
+}
+
+.oficinas-grid-ofix {
+  display: grid;
+  grid-template-columns: 1fr; /* Uma coluna por padrão em mobile */
+  gap: 15px; /* Menor gap */
+}
+
+/* Ajustes para telas maiores */
+@media (min-width: 600px) {
+  .oficinas-grid-ofix {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Volta para o grid em telas maiores */
+  }
+  .search-controls-ofix {
+    flex-direction: row; /* Volta para linha em telas maiores */
+    align-items: flex-end; /* Alinha itens ao final para o botão ficar na mesma altura */
+  }
+  .search-controls-ofix .form-group-ofix {
+     flex-grow: 1;
+  }
+  .search-button-ofix {
+    width: auto; /* Largura automática para o botão */
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-section-ofix { padding: 60px 20px; }
+  .hero-section-ofix h1 { font-size: 2.8em; }
+  .hero-section-ofix p { font-size: 1.2em; }
+  .search-section-ofix { padding: 30px 20px; margin: 0 auto 30px auto; }
+  .results-section-ofix-cliente { padding: 40px 20px; }
+  .results-section-ofix-cliente h2 { font-size: 2em; }
+  .oficinas-grid-ofix { gap: 25px; }
+}
