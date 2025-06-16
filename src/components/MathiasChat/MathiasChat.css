@@ -1,0 +1,126 @@
+/* src/components/MathiasChat/MathiasChat.css */
+/* Use variables if your project has a global CSS variable setup, e.g. var(--ofix-azul) */
+
+.mathias-chat-widget {
+  position: fixed;
+  bottom: 100px; /* Adjust to be above the FAB */
+  right: 30px;
+  width: 350px;
+  max-height: 500px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  z-index: 1001; /* Ensure it's above the FAB but below modals if any */
+  color: #333;
+}
+
+.chat-header {
+  background-color: #f1f1f1; /* Or use a brand color e.g. var(--ofix-azul) */
+  color: #333; /* Or white if using a dark brand color */
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.chat-header .close-button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #777;
+}
+.chat-header .close-button:hover {
+  color: #333;
+}
+
+.message-area {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f9f9f9;
+}
+
+.message {
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 80%;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.message.user {
+  background-color: #007bff; /* Example: var(--ofix-azul-claro) */
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+
+.message.mathias {
+  background-color: #e9ecef; /* Example: var(--cinza-claro) */
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+}
+
+.message p {
+  margin: 0;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #f1f1f1;
+}
+
+.input-area input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 1em;
+}
+
+.input-area input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff; /* Example: var(--ofix-azul) */
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Example using var(--ofix-azul) with transparency */
+}
+
+
+.input-area button {
+  padding: 10px 15px;
+  background-color: #007bff; /* Example: var(--ofix-azul) */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease;
+}
+
+.input-area button:hover {
+  background-color: #0056b3; /* Example: var(--ofix-azul-escuro) */
+}
+
+.input-area button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
