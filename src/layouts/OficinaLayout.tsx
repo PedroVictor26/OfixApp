@@ -1,36 +1,36 @@
 // src/layouts/OficinaLayout.tsx
 import React, { useState } from 'react';
 import { Outlet, Link, NavLink } from 'react-router-dom';
-import ChatWidget from '../../components/MathiasChat/ChatWidget'; // Adjust path as needed
+import ChatWidget from '../components/MathiasChat/ChatWidget'; // Adjust path as needed
 import { FaComments } from 'react-icons/fa'; // Example icons
 import './OficinaLayout.css'; // Make sure this CSS file exists or is created
 
 const OficinaLayout: React.FC = () => {
-  const [isChatVisible, setIsChatVisible] = useState(false);
+    const [isChatVisible, setIsChatVisible] = useState(false);
 
-  const handleUserMessage = async (message: string): Promise<string> => {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        const lowerCaseMessage = message.toLowerCase();
-        if (lowerCaseMessage.includes('tool') || lowerCaseMessage.includes('ferramenta')) {
-          resolve("Mathias: I can help with tool identification. What tool are you thinking of?");
-        } else if (lowerCaseMessage.includes('stock') || lowerCaseMessage.includes('estoque')) {
-          resolve("Mathias: I can provide information about inventory once I'm fully connected. For now, what specific item are you looking for?");
-        } else if (lowerCaseMessage.includes('hello') || lowerCaseMessage.includes('olá') || lowerCaseMessage.includes('oi')) {
-          resolve("Mathias: Hello! How can I assist you today in the workshop?");
-        } else if (lowerCaseMessage.includes('help') || lowerCaseMessage.includes('ajuda')) {
-          resolve("Mathias: I can help with questions about tools, inventory, and general workshop tasks. What do you need assistance with?");
-        }
-        else {
-          resolve("Mathias: I'm processing your request... I can help with tools, stock, and general questions. How can I assist further?");
-        }
-      }, 1000); // Simulate network delay
-    });
-  };
+    const handleUserMessage = async (message: string): Promise<string> => {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                const lowerCaseMessage = message.toLowerCase();
+                if (lowerCaseMessage.includes('ferramenta')) {
+                    resolve("Mathias: Posso ajudar com a identificação de ferramentas. Em qual ferramenta você está pensando?");
+                } else if (lowerCaseMessage.includes('estoque')) {
+                    resolve("Mathias: Posso fornecer informações sobre o inventário assim que estiver totalmente conectado. Por enquanto, qual item específico você está procurando?");
+                } else if (lowerCaseMessage.includes('olá') || lowerCaseMessage.includes('oi')) {
+                    resolve("Mathias: Olá! Como posso te ajudar hoje na oficina?");
+                } else if (lowerCaseMessage.includes('help') || lowerCaseMessage.includes('ajuda')) {
+                    resolve("Mathias: Posso ajudar com perguntas sobre ferramentas, inventário e tarefas gerais da oficina. Com o que você precisa de assistência?");
+                }
+                else {
+                    resolve("Mathias: Estou processando sua solicitação... Posso ajudar com ferramentas, estoque e perguntas gerais. Como posso ajudar mais?");
+                }
+            }, 1000); // Simulate network delay
+        });
+    };
 
-  return (
-    <div className="oficina-layout-ofix">
-      <header className="oficina-header-ofix">
+    return (
+        <div className="oficina-layout-ofix">
+            <header className="oficina-header-ofix">
                 <Link to="/oficina/dashboard" className="logo-link-ofix"> {/* Mudado para Link */}
                     <img src="/ofix-logo.png" alt="OFIX Logo" className="logo-image-ofix" />
                     <span className="logo-subtitle-ofix">Painel</span>
