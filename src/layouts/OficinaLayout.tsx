@@ -7,45 +7,50 @@ import './OficinaLayout.css'; // Make sure this CSS file exists or is created
 
 const OficinaLayout: React.FC = () => {
 
-  const [isChatVisible, setIsChatVisible] = useState(false);
+    const [isChatVisible, setIsChatVisible] = useState(false);
 
-  // URL for the Mathias AI Proxy.
-  // For development, this points to the local proxy.
-  // For production, this should point to the deployed proxy URL.
-  const mathiasProxyUrl = process.env.NODE_ENV === 'production'
-    ? 'YOUR_DEPLOYED_PROXY_URL_HERE/api/chat' // Replace with actual deployed URL
-    : 'http://localhost:3001/api/chat';
+    // URL for the Mathias AI Proxy.
+    // For development, this points to the local proxy.
+    // For production, this should point to the deployed proxy URL.
+    const mathiasProxyUrl = import.meta.env.PROD
+        ? import.meta.env.VITE_MATHIAS_PROXY_URL_PROD
+        : 'http://localhost:3001/api/chat';
 
-  const handleUserMessage = async (message: string): Promise<string> => {
-    try {
-      const response = await fetch(mathiasProxyUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message: message }),
-      });
 
-      if (!response.ok) {
-        // Try to parse error message from proxy if available
-        const errorData = await response.json().catch(() => null); // Catch if error response is not JSON
-        const errorMessage = errorData?.error || `Error from AI service: ${response.status} ${response.statusText}`;
-        console.error('Error calling Mathias AI Proxy:', errorMessage);
-        return `Mathias: Sorry, I encountered an issue. (${errorMessage})`;
-      }
+    const handleUserMessage = async (message: string): Promise<string> => {
+        try {
+            const response = await fetch(mathiasProxyUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message }),
+            });
 
-      const data = await response.json();
-      return data.reply || "Mathias: I didn't receive a valid response.";
+            if (!response.ok) {
+                // Try to parse error message from proxy if available
+                const errorData = await response.json().catch(() => null); // Catch if error response is not JSON
+                const errorMessage = errorData?.error || `Error from AI service: ${response.status} ${response.statusText}`;
+                console.error('Error calling Mathias AI Proxy:', errorMessage);
+                return `Mathias: Sorry, I encountered an issue. (${errorMessage})`;
+            }
 
-    } catch (error: any) {
-      console.error('Network or other error calling Mathias AI Proxy:', error);
-      return `Mathias: Sorry, I'm having trouble connecting. Please check your connection or try again later. (${error.message || 'Network error'})`;
-    }
-  };
+            const data = await response.json();
+            return data.reply || "Mathias: I didn't receive a valid response.";
 
-  return (
-    <div className="oficina-layout-ofix">
-      <header className="oficina-header-ofix">
+        } catch (error: unknown) {
+            console.error('Network or other error calling Mathias AI Proxy:', error);
+            let errorMessage = 'Network error';
+            if (error instanceof Error) {
+                errorMessage = error.message;
+            }
+            return `Mathias: Sorry, I'm having trouble connecting. Please check your connection or try again later. (${errorMessage})`;
+        }
+    };
+
+    return (
+        <div className="oficina-layout-ofix">
+            <header className="oficina-header-ofix">
 
                 <Link to="/oficina/dashboard" className="logo-link-ofix"> {/* Mudado para Link */}
                     <img src="/ofix-logo.png" alt="OFIX Logo" className="logo-image-ofix" />
