@@ -1,11 +1,12 @@
 // src/layouts/OficinaLayout.tsx
 import React, { useState } from 'react';
 import { Outlet, Link, NavLink } from 'react-router-dom';
-import ChatWidget from '../../components/MathiasChat/ChatWidget'; // Adjust path as needed
+import ChatWidget from '../components/MathiasChat/ChatWidget'; // Adjust path as needed
 import { FaComments } from 'react-icons/fa'; // Example icons
 import './OficinaLayout.css'; // Make sure this CSS file exists or is created
 
 const OficinaLayout: React.FC = () => {
+
   const [isChatVisible, setIsChatVisible] = useState(false);
 
   // URL for the Mathias AI Proxy.
@@ -45,6 +46,7 @@ const OficinaLayout: React.FC = () => {
   return (
     <div className="oficina-layout-ofix">
       <header className="oficina-header-ofix">
+
                 <Link to="/oficina/dashboard" className="logo-link-ofix"> {/* Mudado para Link */}
                     <img src="/ofix-logo.png" alt="OFIX Logo" className="logo-image-ofix" />
                     <span className="logo-subtitle-ofix">Painel</span>
